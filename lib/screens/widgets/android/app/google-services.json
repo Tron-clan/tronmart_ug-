@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "213440761468",
+    "project_id": "tron-2e8aa",
+    "storage_bucket": "tron-2e8aa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213440761468:android:2ae3ebc107acb37bca43f9",
+        "android_client_info": {
+          "package_name": "com.tronmart.ug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3iHUe4QiUkj4KudpZrwv9FTl5pvYdZLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
