@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class UploadScreen extends StatefulWidget {
+  @override
+  _UploadScreenState createState() => _UploadScreenState();
+}
+
+class _UploadScreenState extends State<UploadScreen> {
+  final nameController = TextEditingController();
+  final priceController = TextEditingController();
+  final imageController = TextEditingController();
+
+  uploadProduct() async {
+    await FirebaseFirestore.instance.collection('products').add({
+      'name': nameController.text,
+      'price': priceController.text,
+      'image': imageController.text,
+    });
+
+    Navigator.pop(context);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Upload Product"),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: [
+            TextField(
+              controller: nameController,
+              decoration: InputDecoration(labelText: "Product Name"),
+            ),
+            TextField(
+              controller: priceController,
+              decoration: InputDecoration(labelText: "Price"),
+            ),
+            TextField(
+              controller: imageController,
+              decoration: InputDecoration(labelText: "Image URL"),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: uploadProduct,
+              child: Text("Upload"),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
